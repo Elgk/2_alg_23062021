@@ -43,17 +43,21 @@ public class Main {
 
         Random random = new Random();
         MyArrayList<Integer> mal = new MyArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100000; i++) {
             mal.add(random.nextInt(20));
         }
+        long ml = System.currentTimeMillis();
+        mal.selectionSort();
+        System.out.println("SelectionSort time (Ms) - " + (System.currentTimeMillis()-ml));
 
-        System.out.println(mal);
+        ml = System.currentTimeMillis();
+        mal.insertionSort();
+        System.out.println("InsertionSort time (Ms) - " + String.valueOf(System.currentTimeMillis()-ml));
 
-//        mal.selectionSort();
-//        mal.insertionSort();
+        ml = System.currentTimeMillis();
         mal.bubbleSort();
-
-        System.out.println(mal);
+        System.out.println("BubbleSort time (Ms) - " + String.valueOf(System.currentTimeMillis()-ml));
+     //   System.out.println(mal);
 
     }
 }

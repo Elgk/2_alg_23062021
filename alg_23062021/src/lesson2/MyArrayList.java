@@ -22,13 +22,27 @@ public class MyArrayList<E extends Comparable<E>> {
 
     public void add(E item) {
         //  проверить переполнение и при необходимости увеличиваем массив на size/2 +1
+        checkArrayOverflow();
         list[size] = item;
         size++;
     }
+    //  проверка переполнения и при необходимости увеличиваем массив на size/2 +1
+    private void checkArrayOverflow(){
+        if (list.length - (size+1) == 0){
+            E[] list_new = Arrays.copyOf(list, list.length + size/2 +1);
+            list = list_new;
+        }
+    }
 
+    private void checkIndex(int index){
+        if (index < 0 || index > size){
+            throw new IndexOutOfBoundsException();
+        }
+    }
     public void add(int index, E item) {
         // проверить корректность index  [0..size]
-        //  проверить переполнение и при необходимости увеличиваем массив на size/2 +1
+        checkIndex(index);
+        checkArrayOverflow();
         for (int i = size; i > index; i--) {
             list[i] = list[i - 1];
         }
@@ -41,6 +55,7 @@ public class MyArrayList<E extends Comparable<E>> {
             throw new NoSuchElementException();
         }
         // проверить корректность index  [0..size)
+        checkIndex(index);
         for (int i = index; i <= size; i++) {
             list[i] = list[i + 1];
         }
@@ -59,6 +74,7 @@ public class MyArrayList<E extends Comparable<E>> {
 
     public E get(int index) {
         // проверить корректность index  [0..size)
+        checkIndex(index);
         return list[index];
     }
 
