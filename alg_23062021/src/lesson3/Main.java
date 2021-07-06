@@ -61,6 +61,20 @@ public class Main {
         System.out.println(mpq.remove());
         System.out.println(mpq);
 
+        System.out.println("---");
+        ReverceExpression rex = new ReverceExpression("done");
+        System.out.print(rex.reverce());
 
+        System.out.println("_______");
+        MyDeque<Integer> deque = new MyDeque<>();
+        deque.insertLeft(1);
+        deque.insertLeft(3);
+        deque.insertLeft(2);
+        deque.insertRight(4);
+        deque.insertRight(6);
+        System.out.println(deque.toString());
+        deque.removeLeft();
+        deque.removeRight();
+        System.out.println(deque.toString());
     }
 }
