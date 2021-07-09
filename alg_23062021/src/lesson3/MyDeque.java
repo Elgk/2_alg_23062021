@@ -92,7 +92,7 @@ public class MyDeque <T>{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = begin; i != end; nextIndex(i)) {
+        for (int i = begin; i != end; i = nextIndex(i)) {
             sb.append(list[i]).append(", ");
         }
         if (isEmpty()){
