@@ -10,17 +10,23 @@ public class MyLinkedList<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new Iter();
     }
 
     private class Iter implements Iterator<E>{
+        private Node current = new Node(null, first);
+
         @Override
         public boolean hasNext() {
-            return false;
+            return current.getNext() != null;
         }
 
         @Override
         public E next() {
+            if (hasNext()) {
+                current = current.getNext();
+                return current.getValue();
+            }
             return null;
         }
     }

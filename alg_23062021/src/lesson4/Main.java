@@ -14,7 +14,19 @@ public class Main {
         mll.insertLast(77);
         mll.insertLast(88);
         System.out.println(mll);
+        for (Integer it : mll) {
+            System.out.println(it);
+        }
 
+        MyLinkedStack<Integer> stack = new MyLinkedStack();
+        stack.push(2);
+        stack.push(22);
+        stack.push(31);
+        stack.push(1);
+        stack.push(8);
+        System.out.println(stack.toString());
+        stack.pop();
+        System.out.println(stack.peek());
 //        System.out.println(mll.removeFirst());
 //        System.out.println(mll.removeLast());
 //        System.out.println(mll);
@@ -24,11 +36,11 @@ public class Main {
 
 //        System.out.println(mll.indexOf(8));
 
-        mll.insert(2, 55);
-        System.out.println(mll);
-//
-        System.out.println(mll.remove(55));
-        System.out.println(mll);
+//        mll.insert(2, 55);
+//        System.out.println(mll);
+////
+//        System.out.println(mll.remove(55));
+//        System.out.println(mll);
 
 //        MyLinkedQueue<Integer> queue = new MyLinkedQueue<>();
 //        queue.add(5);
