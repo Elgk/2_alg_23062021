@@ -157,5 +157,4 @@ public class MyArrayList<E extends Comparable<E>> {
             }
         }
     }
-
 }
