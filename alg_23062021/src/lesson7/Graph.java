@@ -42,5 +42,4 @@ public class Graph {
         }
         adjList[v2].add(v1);
     }
-
 }
