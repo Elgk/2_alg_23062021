@@ -89,4 +89,20 @@ public class MyChainingHashMap<K, V> {
         return sb.toString();
     }
 
+    public V delete(K key){
+        chekKeyNotNull(key);
+        if (isEmpty()){
+            throw new RuntimeException("The map is empty.");
+        }
+        int i = hash(key);
+        for (Node node : st[i]) {
+            if (key.equals(node.key)) {
+                V tmp = node.value;
+                st[i].remove(node);
+                size--;
+                return tmp;
+            }
+        }
+        return null;
+    }
 }

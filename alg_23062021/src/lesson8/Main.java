@@ -24,6 +24,10 @@ public class Main {
         System.out.println(mhm.get(15));
         System.out.println(mhm.contain(111));
         System.out.println(mhm);
+        System.out.println("size: "+ mhm.size());
+        System.out.println(mhm.delete(11));
+        System.out.println(mhm);
+        System.out.println("size: "+ mhm.size());
 
 
         Random random = new Random();
