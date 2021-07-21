@@ -17,6 +17,18 @@ public class Main {
 //        System.out.println(sumDigit(37512));
 //        System.out.println(recSumDigit(37512));
 
+        System.out.println(degreeOfNum(2,5));
+        System.out.println(degreeOfNumRec(2,5));
+
+        Item[] arrOfItem = {new Item(1,3),
+                            new Item(6,4),
+                            new Item(4,5),
+                            new Item(7,8),
+                            new Item(6,9)};
+        Backpack backpack = new Backpack(arrOfItem);
+        int backcapacity = 13;
+        int result = backpack.findBestSum(arrOfItem.length-1, backcapacity);
+        System.out.println(result);
 
     }
 
@@ -97,5 +109,19 @@ public class Main {
             return n;
         }
         return recSumDigit(n / 10) + n % 10;
+    }
+
+    public static int degreeOfNum(int a, int n){
+        int degr = 1;
+        for (int i = 0; i < n; i++) {
+            degr *= a;
+        }
+        return degr;
+    }
+    public static int degreeOfNumRec(int a, int b){
+        if (b == 1){
+            return a;
+        }
+        return degreeOfNum(a, (b-1)) * a;
     }
 }
